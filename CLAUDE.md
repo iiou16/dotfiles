@@ -4,15 +4,63 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This repository contains development rules and guidelines for Claude Code, designed to be used in `~/.claude/CLAUDE.md`. The rules are organized into specialized files for different development environments.
+This repository contains comprehensive development rules and guidelines for Claude Code, designed to be used in `~/.claude/CLAUDE.md`. The rules are organized into specialized files for different development environments with advanced file referencing capabilities.
+
+## Key Features
+
+- **File Reference System**: Uses `@syntax` to dynamically import specialized guidelines
+- **Modular Architecture**: Separated by development context for better organization  
+- **Multilingual Support**: Japanese base rules with English specialized guidelines
+- **Practical Implementation**: Real-world development patterns and tool configurations
 
 ## File Structure
 
-- `CLAUDE.md` - Basic development rules (Japanese)
-- `python_dev.md` - Python-specific development rules (English)
-- `typescript_dev.md` - TypeScript-specific development rules (English)
-- `web_app_dev.md` - Web application development rules (English)
+### Core Files
+- `.claude/CLAUDE.md` - Main configuration file with file references (Japanese)
+- `CLAUDE.md` - Basic development rules documentation (Japanese)
 
-## Development Context
+### Specialized Guidelines (.claude/)
+- `python_dev.md` - Python development comprehensive guide (English)
+  - uv package management rules
+  - Strict type hints requirements  
+  - pytest/anyio testing strategies
+  - Ruff/pyright code quality tools
 
-This is a rules definition repository where each markdown file contains specific guidance for Claude Code when working in different development contexts. The rules should be practical, actionable, and focused on improving development productivity and code quality.
+- `typescript_dev.md` - TypeScript development comprehensive guide (English)
+  - Strict TypeScript configuration
+  - npm/yarn package management
+  - Jest/Vitest testing frameworks
+  - Prettier/ESLint code formatting
+
+- `web_app_dev.md` - Full-stack web application guide (English)
+  - FastAPI + React architecture
+  - Full-stack integration patterns
+  - Security, testing, and deployment
+  - API-driven development methodology
+
+## Implementation
+
+The main `.claude/CLAUDE.md` uses file referencing to dynamically load appropriate guidelines:
+```markdown
+- Python開発: @python_dev.md
+- TypeScript開発: @typescript_dev.md  
+- Webアプリケーション開発（FastAPI + React）: @web_app_dev.md
+```
+
+## Development Philosophy
+
+This rules system implements:
+- **Test-Driven Development (TDD)** as the primary development approach
+- **Strict typing and code quality** across all languages
+- **Comprehensive toolchain integration** for each technology stack
+- **Security-first development practices** especially for web applications
+- **Performance optimization** and deployment best practices
+
+## Recent Improvements
+
+- Implemented file reference system using `@syntax`
+- Added comprehensive Python development rules with uv/Ruff/pyright
+- Created strict TypeScript development guidelines  
+- Established full-stack web application development framework
+- Integrated TDD philosophy and commit message standards
+- Added security checklists and performance optimization guides
